@@ -155,7 +155,7 @@ public class MovieTicketBookingSystem {
         displaySeats();
     }
 
-
+//
 
     static void displaySeats() {
 
