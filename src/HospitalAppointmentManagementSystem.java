@@ -6,7 +6,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-// ================= PATIENT CLASS =================
 
 class Patient {
 
@@ -34,7 +33,6 @@ class Patient {
 }
 
 
-// ================= DOCTOR CLASS =================
 
 class Doctor {
 
@@ -51,7 +49,6 @@ class Doctor {
 
         slots = new ArrayList<>();
 
-        // Default time slots
         slots.add(LocalTime.of(10, 0));
         slots.add(LocalTime.of(11, 0));
         slots.add(LocalTime.of(12, 0));
@@ -68,7 +65,6 @@ class Doctor {
 }
 
 
-// ================= APPOINTMENT CLASS =================
 
 class Appointment {
 
@@ -110,25 +106,20 @@ class Appointment {
 }
 
 
-// ================= MAIN CLASS =================
 
 public class HospitalAppointmentManagementSystem {
 
     Scanner sc = new Scanner(System.in);
 
-    // Store patients
     Map<Integer, Patient> patients = new HashMap<>();
 
-    // Store doctors
     Map<Integer, Doctor> doctors = new HashMap<>();
 
-    // Store appointments
     Map<String, Appointment> appointments = new HashMap<>();
 
     int appointmentId = 1001;
 
 
-    // ================= REGISTER PATIENT =================
 
     void registerPatient() {
 
@@ -173,7 +164,6 @@ public class HospitalAppointmentManagementSystem {
     }
 
 
-    // ================= ADD DOCTOR =================
 
     void addDoctor() {
 
@@ -211,7 +201,6 @@ public class HospitalAppointmentManagementSystem {
     }
 
 
-    // ================= BOOK APPOINTMENT =================
 
     void bookAppointment() {
 
@@ -267,11 +256,9 @@ public class HospitalAppointmentManagementSystem {
                         "Invalid time slot. Please select an available slot.");
             }
 
-            // Create unique appointment key
             String key =
                     doctorId + "_" + date + "_" + time;
 
-            // Check whether slot already booked
             if (appointments.containsKey(key)) {
 
                 throw new Exception(
@@ -305,7 +292,6 @@ public class HospitalAppointmentManagementSystem {
     }
 
 
-    // ================= CANCEL APPOINTMENT =================
 
     void cancelAppointment() {
 
@@ -348,7 +334,6 @@ public class HospitalAppointmentManagementSystem {
     }
 
 
-    // ================= VIEW AVAILABLE SLOTS =================
 
     void viewAvailableSlots() {
 
@@ -410,7 +395,6 @@ public class HospitalAppointmentManagementSystem {
     }
 
 
-    // ================= VIEW DOCTOR SCHEDULE =================
 
     void viewDoctorSchedule() {
 
@@ -471,7 +455,6 @@ public class HospitalAppointmentManagementSystem {
     }
 
 
-    // ================= VIEW PATIENT HISTORY =================
 
     void viewPatientHistory() {
 
@@ -526,7 +509,6 @@ public class HospitalAppointmentManagementSystem {
     }
 
 
-    // ================= VIEW ALL PATIENTS =================
 
     void viewPatients() {
 
@@ -548,7 +530,6 @@ public class HospitalAppointmentManagementSystem {
     }
 
 
-    // ================= VIEW ALL DOCTORS =================
 
     void viewDoctors() {
 
@@ -577,7 +558,6 @@ public class HospitalAppointmentManagementSystem {
     }
 
 
-    // ================= MAIN MENU =================
 
     void menu() {
 
@@ -667,7 +647,6 @@ public class HospitalAppointmentManagementSystem {
     }
 
 
-    // ================= MAIN METHOD =================
 
     public static void main(String[] args) {
 
